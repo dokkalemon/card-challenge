@@ -2,6 +2,9 @@
   <div class="card-container">
       <div class="img-container">
           <img :src="require(`../assets/${thumb}`)" alt="">
+          <div class="hover-effect">
+              <img src="@/assets/icon-view.svg" alt="">
+          </div>
       </div>
       <div class="title">
           <h3>{{ title }}</h3>
@@ -56,10 +59,34 @@ export default {
     padding: 20px;
     border-radius: 15px;
     .img-container {
+        height: 57%;
         width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
         img {
+            height: 100%;
             width: 100%;
-            border-radius: 10px;
+        }
+        .hover-effect {
+            height: 100%;
+            width: 100%;
+            background-color: hsla(178, 100%, 50%, 0.473);
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.5s ease;
+            img {
+                height: 50px;
+                width: 50px;
+            }
+        }
+        &:hover .hover-effect {
+            opacity: 1;
         }
     }
     .title {
@@ -68,6 +95,12 @@ export default {
             color: $white;
             font-weight: 400;
             font-size: 22px;
+            cursor: pointer;
+            transition: all .5s ease;
+
+            &:hover {
+                color: $cyan;
+            }
         }
     }
     .text {
@@ -138,6 +171,11 @@ export default {
         }
         span {
             color: $white;
+            cursor: pointer;
+            transition: all .5s ease;
+            &:hover {
+                color: $cyan;
+            }
         }
     }
     
