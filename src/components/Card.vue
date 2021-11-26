@@ -129,9 +129,6 @@ export default {
                 color: $cyan;
                 font-weight: 400;
             }
-           
-            
-
         }
         .date {
             width: 100%;
@@ -146,8 +143,6 @@ export default {
                 color: $soft-blue;
                 font-weight: 300;
             }
-           
-           
         }
     }
     .line {
