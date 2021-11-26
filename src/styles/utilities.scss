@@ -9,5 +9,10 @@
 
 /* Utilities */
 body {
-    background-color: $main-bg
+    background-color: $main-bg;
+    font-family: $primary-text
+}
+
+.debug {
+    border: 1px solid red;
 }
