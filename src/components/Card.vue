@@ -1,30 +1,30 @@
 <template>
   <div class="card-container">
       <div class="img-container">
-          <img src="@/assets/image-equilibrium.jpg" alt="">
+          <img :src="require(`../assets/${thumb}`)" alt="">
       </div>
       <div class="title">
-          <h3>Equilibrium #3429</h3>
+          <h3>{{ title }}</h3>
       </div>
       <div class="text">
-          <h4>Our Equilibrium collection promotes balance and calm.</h4>
+          <h4>{{ text }}</h4>
       </div>
       <div class="setting">
           <div class="value">
               <img src="@/assets/icon-ethereum.svg" alt="">
-              <h4>0.041ETH</h4>
+              <h4>{{ value }}</h4>
           </div>
           <div class="date">
               <img src="@/assets/icon-clock.svg" alt="">
-              <h4>3 days left</h4>
+              <h4>{{ date}}</h4>
           </div>
       </div>
 
       <div class="line"></div>
 
       <div class="author">
-          <img src="@/assets/image-avatar.png" alt="">
-          <h4>Creation of <span>Jules Wyvern</span></h4>
+          <img :src="require(`../assets/${avatar}`)" alt="">
+          <h4>Creation of <span>{{ name }}</span></h4>
       </div>
   </div>
 </template>
@@ -32,6 +32,16 @@
 <script>
 export default {
     name: 'Card',
+
+    props: {
+        thumb: String,
+        title: String,
+        text: String,
+        value: String,
+        date: String,
+        avatar: String,
+        name: String,
+    }
 }
 </script>
 
